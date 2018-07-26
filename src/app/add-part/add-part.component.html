@@ -1,0 +1,159 @@
+<div>
+
+
+<form class="emp-form" #partstockForm="ngForm" (ngSubmit)="onSubmit(partstockForm)">
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <span class="label label-default">Part Name</span>
+
+
+      <select class="form-control" ngModel
+          name="partname" required #partname="ngModel">
+
+          <option *ngFor="let datas of loginservice.parttypelist" [ngValue]="(datas.id)">{{datas.partname}}</option>
+        </select>
+
+
+      <!--<div class="validation-error" *ngIf="PartName.invalid && PartName.touched">This Field is Required.</div>-->
+    </div>
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <span class="label label-default">Part Code</span>
+
+
+      <input class="form-control" name="partcode"
+        placeholder="Enter Part Name" #partcode="ngModel" ngModel  required>
+
+
+      <!--<div class="validation-error" *ngIf="PartName.invalid && PartName.touched">This Field is Required.</div>-->
+    </div>
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <span class="label label-default">Serial Number</span>
+
+
+      <input class="form-control" name="serial"
+        placeholder="Enter Part Name" #serial="ngModel" ngModel  required>
+
+
+      <!--<div class="validation-error" *ngIf="PartName.invalid && PartName.touched">This Field is Required.</div>-->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <span class="label label-default">Self Details</span>
+
+
+      <select class="form-control" ngModel
+          name="boxnumber" required #boxnumber="ngModel">
+
+          <option *ngFor="let datas of loginservice.binslist" [ngValue]="(datas.id)">{{datas.box_number}}</option>
+        </select>
+
+      <!--<div class="validation-error" *ngIf="PartName.invalid && PartName.touched">This Field is Required.</div>-->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <span class="label label-default">Bin Name</span>
+
+
+      <select class="form-control" ngModel
+          name="binname" required #binname="ngModel">
+
+          <option *ngFor="let datas of loginservice.binslist" [ngValue]="(datas.id)">{{datas.bins_name}}</option>
+        </select>
+
+      <!--<div class="validation-error" *ngIf="PartName.invalid && PartName.touched">This Field is Required.</div>-->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <span class="label label-default">Part Request Date</span>
+
+
+      <input class="form-control" name="requestDate"
+        placeholder="YYYY-MM-DD" #requestDate="ngModel" ngModel  required>
+
+      <!--<div class="validation-error" *ngIf="PartName.invalid && PartName.touched">This Field is Required.</div>-->
+    </div>
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <span class="label label-default">Part Receive Date</span>
+
+
+      <input class="form-control" name="receiveDate"
+        placeholder="YYYY-MM-DD" #receiveDate="ngModel" ngModel  required>
+
+      <!--<div class="validation-error" *ngIf="PartName.invalid && PartName.touched">This Field is Required.</div>-->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <span class="label label-default">Quantity</span>
+
+
+      <input class="form-control" name="qty"
+        placeholder="YYYY-MM-DD" #qty="ngModel" ngModel  required>
+
+      <!--<div class="validation-error" *ngIf="PartName.invalid && PartName.touched">This Field is Required.</div>-->
+    </div>
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <span class="label label-default">Procuring Price</span>
+
+
+      <input class="form-control" name="procurePrice"
+        placeholder="YYYY-MM-DD" #procurePrice="ngModel" ngModel  required>
+
+      <!--<div class="validation-error" *ngIf="PartName.invalid && PartName.touched">This Field is Required.</div>-->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <span class="label label-default">Selling Price</span>
+
+
+      <input class="form-control" name="sellingPrice"
+        placeholder="YYYY-MM-DD" #sellingPrice="ngModel" ngModel  required>
+
+      <!--<div class="validation-error" *ngIf="PartName.invalid && PartName.touched">This Field is Required.</div>-->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <button type="submit" class="btn btn-info">
+        <i class="fa fa-floppy-o"></i> Submit</button>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</form>
+</div>

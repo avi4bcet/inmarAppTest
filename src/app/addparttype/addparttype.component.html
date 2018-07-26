@@ -1,0 +1,63 @@
+<div class="row">
+
+              <div class="col-md-6">
+
+              <form class="emp-form" #partdetailsForm="ngForm" (ngSubmit)="onSubmit(partdetailsForm)" >
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="hidden" name="partid" #partid="ngModel" [(ngModel)]="loginservice.selectedParttype.id">
+                <span class="label label-default">Part Name</span>
+                <input class="form-control" name="partname"
+                  placeholder="Enter Part Name" #partname="ngModel" [(ngModel)]="loginservice.selectedParttype.partname"  required>
+                <!--<div class="validation-error" *ngIf="PartName.invalid && PartName.touched">This Field is Required.</div>-->
+              </div>
+
+            </div>
+
+
+            <div class="form-row">
+              <div class="form-group col-md-8">
+                <button [disabled]="!partdetailsForm.valid" type="submit" class="btn btn-info">
+                  <i class="fa fa-floppy-o"></i> Submit</button>
+              </div>
+
+            </div>
+          </form>
+
+              </div>
+
+              <div class="col-md-6">
+
+                <table class="table table-sm table-hover">
+
+                  <tr>
+                    <th Highlight>Part Name</th>
+
+                    <th Highlight>Action</th>
+                  </tr>
+
+
+    <tr *ngFor="let parts of loginservice.parttypelist">
+      <td>{{parts.partname}}</td>
+
+      <td>
+        <a class="btn" (click)="showForEdit(parts)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn text-danger" (click)="onDelete(parts.id)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+    </tr>
+  </table>
+
+              </div>
+
+
+
+
+
+
+
+        </div>

@@ -1,0 +1,42 @@
+<div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+
+        <li class="breadcrumb-item active">Manage Bins</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Bins Details</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Bin Name</th>
+                  <th>Bin Identifier</th>
+                  <th>Box/Self Name</th>
+                  <th>Box/Self Identifier</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor = "let data of loginservice.binslist">
+                  <td>{{data.bins_name}}</td>
+                  <td>{{data.bins_number}}</td>
+                  <td>{{data.box_name}}</td>
+                  <td>{{data.box_number}}</td>
+                  <td><!--<a [routerLink]="['/addbin']" [queryParams]="{ id: (data.id)}">Edit</a>--><a class="btn" [routerLink]="['/editbin']" [queryParams]="{ id: (data.id)}">
+        <i class="fa fa-pencil-square-o"></i>
+      </a><a class="btn text-danger" (click)="onDelete(data.id)">
+        <i class="fa fa-trash-o"></i>
+      </a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>

@@ -1,0 +1,58 @@
+<div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+
+        <li class="breadcrumb-item active">Manage Bins</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Bins Details</div>
+        <div class="card-body">
+          <div class="table-responsive">
+
+            <span>{{loginservice.statusMessage}}</span>  
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+
+                <tr>
+                  <th>Part Name</th>
+                  <th>Partcode</th>
+                  <th>Part Serial No</th>
+                  <th>Bin Name</th>
+                  <th>Box/Self Details</th>
+                  <th>Issue Date</th>
+                  <th>Procuring Date</th>
+                  <th>Quantity</th>
+                  <th>Procuring Price</th>
+                  <th>Selling Price</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor = "let data of loginservice.partstocklist">
+                  <td>{{data.partname}}</td>
+                  <td>{{data.part_batchno}}</td>
+                  <td>{{data.part_serialno}}</td>
+                  <td>{{data.bins_name}}</td>
+                  <td>{{data.box_name}}</td>
+                  <td>{{data.part_issue_date}}</td>
+                  <td>{{data.part_receive_date}}</td>
+                  <td>{{data.qty}}</td>
+                  <td>{{data.parts_procurement_price}}</td>
+                  <td>{{data.parts_selling_price}}</td>
+
+                  <td><!--<a [routerLink]="['/addbin']" [queryParams]="{ id: (data.id)}">Edit</a>--><a class="btn" [routerLink]="['/editbin']" [queryParams]="{ id: (data.id)}">
+        <i class="fa fa-pencil-square-o"></i>
+      </a><a class="btn text-danger" (click)="onDelete(data.id)">
+        <i class="fa fa-trash-o"></i>
+      </a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>

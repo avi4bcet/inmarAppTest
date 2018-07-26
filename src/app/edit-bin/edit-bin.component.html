@@ -1,0 +1,56 @@
+
+
+
+
+<div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+
+        <li class="breadcrumb-item active">Manage Bins</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Add Bin Details</div>
+        <div class="card-body">
+
+
+
+            <form class="emp-form" #employeeForm="ngForm" *ngFor = "let data of loginservice.binslist" (ngSubmit)="onSubmit(employeeForm)">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input type="hidden" name="paramid" ngModel="{{data.id}}">
+      <label class="label label-default">Bins Name</label>
+      <input class="form-control" name="bins_name" ngModel="{{data.bins_name}}" required>
+      </div>
+    <div class="form-group col-md-6">
+      <label class="label label-default">Bins Number</label>
+      <input class="form-control" name="bins_number" ngModel="{{data.bins_number}}" required>
+
+    </div>
+  </div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="label label-default">Box Name</label>
+    <input class="form-control" name="box_name" ngModel="{{data.box_name}}">
+  </div></div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="label label-default">Box Number</label>
+      <input class="form-control" name="box_number" ngModel="{{data.box_number}}">
+    </div>
+
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <button [disabled]="!employeeForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+        <i class="fa fa-floppy-o"></i> Submit</button> &nbsp;
+    </div>
+
+  </div>
+</form>
+
+        </div>
+
+      </div>
+    </div>

@@ -1,0 +1,50 @@
+
+<div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+
+        <li class="breadcrumb-item active">Manage Bins</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Add Bin Details</div>
+        <div class="card-body">
+
+            <form class="emp-form" #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input class="form-control" name="bins_name" #BinsName="ngModel" [(ngModel)]="loginservice.selectedBin.bins_name"
+        placeholder="Bins Name" required>
+      <div class="validation-error" *ngIf="BinsName.invalid && BinsName.touched">This Field is Required.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="bins_number" #BinsNumber="ngModel" [(ngModel)]="loginservice.selectedBin.bins_number" placeholder="Bins Number"
+        required>
+      <div class="validation-error" *ngIf="BinsNumber.invalid && BinsNumber.touched">This Field is Required.</div>
+    </div>
+  </div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+    <input class="form-control" name="box_name" #boxName="ngModel" [(ngModel)]="loginservice.selectedBin.box_name" placeholder="Box Name">
+  </div></div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input class="form-control" name="box_number" #boxNumber="ngModel" [(ngModel)]="loginservice.selectedBin.box_number" placeholder="Box Number">
+    </div>
+
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <button [disabled]="!employeeForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+        <i class="fa fa-floppy-o"></i> Submit</button> &nbsp; <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(employeeForm)">
+        <i class="fa fa-repeat"></i> Reset</button>
+    </div>
+
+  </div>
+</form>
+
+        </div>
+
+      </div>
+    </div>
